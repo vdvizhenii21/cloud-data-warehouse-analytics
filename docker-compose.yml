@@ -1,0 +1,6 @@
+services:
+  demo:
+    build: .
+    volumes:
+      - ./output:/app/output
+    command: ["python", "-m", "cloud_warehouse", "--source", "fixture", "--sink", "local"]

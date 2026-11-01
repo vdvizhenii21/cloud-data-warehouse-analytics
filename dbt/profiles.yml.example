@@ -1,0 +1,11 @@
+weather_analytics:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: oauth
+      project: YOUR_GCP_PROJECT_ID
+      dataset: weather_analytics
+      threads: 2
+      location: US
+      priority: interactive

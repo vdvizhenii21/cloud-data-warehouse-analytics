@@ -1,0 +1,22 @@
+version: 2
+sources:
+  - name: raw
+    schema: weather_analytics
+    tables:
+      - name: raw_weather_daily
+        columns:
+          - name: city
+            tests: [not_null]
+          - name: observation_date
+            tests: [not_null]
+models:
+  - name: stg_weather_daily
+    description: "Normalized daily observations from Open-Meteo"
+    columns:
+      - name: city
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [kyiv, london, new_york]
+      - name: observation_date
+        data_tests: [not_null]

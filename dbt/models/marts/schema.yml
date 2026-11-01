@@ -1,0 +1,11 @@
+version: 2
+models:
+  - name: mart_city_monthly
+    description: "Monthly weather metrics per city for business analytics"
+    columns:
+      - name: city
+        data_tests: [not_null]
+      - name: month
+        data_tests: [not_null]
+      - name: observed_days
+        data_tests: [not_null]
